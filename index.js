@@ -18,7 +18,7 @@ app.use(express.json());
 
 //Connection to mongoDB
 //in uri replace username and password with your own mongoDB account user and pass
-const uri = "mongodb+srv://username:password@cluster0.hqger3t.mongodb.net/?retryWrites=true&w=majority"
+const uri = "mongodb+srv://username:password@"
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 mongoose.connect(uri).then(()=>{
