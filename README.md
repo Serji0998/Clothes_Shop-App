@@ -1,8 +1,15 @@
-# first_app
-
 A new Flutter project.
 
 ## Getting Started
+Hello, This is completed a small-scale project that let you create account and login throughout connection to MongoDB. User can browse collections and add Items to cart, beside veiw cart. 
+
+# Important: 1- you must change MongoDB link in index.js file line 21 to your MongoDB in order to link your database account.
+#            2- in lib/utils/socket_client.dart line 8 you must change ip address to your IPv4 address.
+#            3- adding collection/products to app can be done from database (check schema for Product data in index.js file). In addition, when   
+#            you want to add products from database , you can use product image link from google images search, copy and paste it in database 
+#            product image
+
+
 
 This project is a starting point for a Flutter application.
 
