@@ -28,12 +28,17 @@
 A standout feature of this project is the backend integration of **MongoDB Change Streams**. 
 The server "watches" the collection and automatically emits a `productUpdated` event to all clients whenever the catalog changes:
 
-## javascript
-// Server-side logic for instant updates
-productChangeStream.on('change', async () => {
-   const products = await Product.find();
-   io.emit('productUpdated', products); 
-});
+---
+
+## 🎓 Experience Project
+This application was developed as an independent project to master **Full-Stack Mobile Development** and **Real-Time System Architecture**. 
+
+### 🎯 Project Objectives
+
+* **Full-Stack Integration:** Successfully bridging a **Flutter (Dart)** mobile frontend with a **Node.js** backend environment.
+* **Real-Time Data Flow:** Implementing **Socket.io** to move away from traditional REST APIs and move toward an event-driven architecture for instant UI updates.
+* **Advanced Database Management:** Utilizing **MongoDB Change Streams** to synchronize the database state with the client-side view in real-time.
+* **Cloud Persistence:** Designing and implementing a NoSQL schema in **MongoDB Atlas** to handle dynamic product catalogs and user authentication.
 
 # GUI
 
