@@ -1,22 +1,39 @@
-## Clothes Shop
-A small-scale applicatopn Created using Flutter-Dart that let you create account and login throughout connection to MongoDB. User can browse collections and add Items to cart, beside veiw cart. 
+# 👕 Clothes Shop: Real-Time Mobile E-Commerce
+> A cross-platform mobile application built with **Flutter** and **Node.js**, featuring real-time inventory updates and instant user synchronization via **Socket.io**.
 
-# Important:
-1- you must change MongoDB link in index.js file line 21 to your MongoDB in order to link your database account.
+---
 
-2- in lib/utils/socket_client.dart line 8 you must change ip address to your IPv4 address.
+## 🚀 Technical Highlights
 
-3- adding collection/products to app can be done from database (check schema for Product data in index.js file).
+* **📱 Cross-Platform UI:** Developed with **Flutter & Dart** for a smooth, native-feeling user experience on both iOS and Android.
+* **⚡ Real-Time Inventory:** Implements **Socket.io** and **MongoDB Change Streams**. When a product is added or changed in the database, all connected users see the update instantly without refreshing.
+* **🔐 Event-Driven Authentication:** User registration and login are handled via WebSocket events, reducing HTTP overhead.
+* **📦 NoSQL Architecture:** Uses **MongoDB Atlas** with Mongoose schemas to manage flexible product catalogs and user profiles.
 
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠 Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| Layer | Technology |
+| :--- | :--- |
+| **Mobile Frontend** | Flutter (Dart) |
+| **Backend Runtime** | Node.js |
+| **Real-Time Engine** | Socket.io |
+| **Database** | MongoDB (Mongoose ODM) |
+| **Server Framework** | Express.js |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🧠 Key Logic: Change Streams
+A standout feature of this project is the backend integration of **MongoDB Change Streams**. 
+The server "watches" the collection and automatically emits a `productUpdated` event to all clients whenever the catalog changes:
+
+## javascript
+// Server-side logic for instant updates
+productChangeStream.on('change', async () => {
+   const products = await Product.find();
+   io.emit('productUpdated', products); 
+});
 
 # GUI
 
